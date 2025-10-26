@@ -13,8 +13,9 @@ steps:
 
 - script: |
     pip install pylint
-    pylint **/*.py
+    pylint $(find . -name "*.py")
   displayName: 'Run pylint'
+
 
 - script: |
     echo "Building the Python application"
