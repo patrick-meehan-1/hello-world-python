@@ -1,10 +1,9 @@
 def hello():
-    return 'Hello, World!'
+    return "Hello, CI World!"
 
-if __name__ == '__main__':
+def add(a, b):
+    return a + b
+
+if __name__ == "__main__":
     print(hello())
-
-def hello():
-    return 'Hello, CI World!'
-
-# new
+    print(f"1 + 2 = {add(1, 2)}")
