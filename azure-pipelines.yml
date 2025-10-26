@@ -1,5 +1,6 @@
 trigger:
 - main
+- development
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -10,6 +11,13 @@ steps:
     versionSpec: '3.8'
     addToPath: true
 
+# --- New linting step ---
+- script: |
+    pip install pylint
+    pylint $(find . -name "*.py")
+  displayName: 'Run pylint'
+
+# --- Existing build step ---
 - script: |
     echo "Building the Python application"
     python -m compileall .
